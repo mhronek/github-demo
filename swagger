@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Description",
+    "version" : "1.0.0",
+    "title" : "Edgeman2 - TEST",
+    "contact" : {
+      "name" : "Kwixas",
+      "url" : "http://www.kwixas.com",
+    },
+  },
+  "host" : "myedgeman.com:7171",
+  "basePath" : "/EDGETST",
+  "tags" : [{
+    "name" : "getAreas"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/subroutine/getAreas" : {
+      "post" : {
+        "tags" : [ "getAreas" ],
+        "operationId" : "_subroutine_getAreas",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Your request was successful.",
+          },
+          "400" : {
+            "description" : "Caused by one of the following conditions: 1) The incorrect number of parameters was sent to the subroutine. 2) The incorrect type of parameter was sent to the subroutine. 3) The subroutine definition was not found. 4) The parameters in the URL you are trying to access are not supported for this request."
+          },
+          "401" : {
+            "description" : "Incorrect credentials provided."
+          },
+          "403" : {
+            "description" : "Unauthorized access to resource."
+          },
+          "405" : {
+            "description" : "The account you are calling is not enabled for REST"
+          },
+          "500" : {
+            "description" : "\"Caused by one of the following conditions: 1) The server was not able to connect to the port for an unknown reason. 2) The server was unable to process your request because the database connection details were not found in the cm.ini file. 3) An error occurred in the subroutine input payload, so it could not to be parsed"
+          }
+        }
+      }
+    }
+  }
+ }
